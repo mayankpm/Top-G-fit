@@ -1,0 +1,146 @@
+body {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+footer {
+  height: 150px;
+  width: 100%;
+}
+
+.form-none {
+  display: none;
+}
+
+.main {
+  min-height: 100vh;
+}
+
+.bg-purple-custom {
+  background-image: linear-gradient(340deg, #7f23f5 0%, #a970f2 100%);
+}
+.bg-purple-blue-pink {
+  background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+}
+.bg-pink-custom {
+  background-image: linear-gradient(19deg, #f9a8fa 0%, #fce6e6 100%);
+}
+.bg-orange-custom {
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+}
+.bg-darkpink-custom {
+  background-image: linear-gradient(62deg, #f5458a 0%, #ff97ac 100%);
+}
+
+.recipe-card-border {
+  border: 1px solid #7f23f5;
+}
+
+.carbs {
+  background-color: #50bdfa;
+}
+
+.protein {
+  background-color: #f5458a;
+}
+
+.fats {
+  background-color: #37de85;
+}
+
+.show {
+  display: contents;
+}
+
+.img-div {
+  width: 18.75rem;
+  height: 18.75rem;
+}
+
+.meal-image {
+  object-fit: fill;
+  max-height: 18.75rem;
+  max-width: 18.75rem;
+}
+
+.meal-card {
+  max-width: 18.75rem;
+}
+
+.bg-lightblue-custom {
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+}
+
+.heartBtn {
+  color: #fff;
+  font-size: 1.25rem;
+  margin: 0.5rem;
+  position: absolute;
+  background-image: linear-gradient(340deg, #7f23f5 0%, #a970f2 100%);
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.heartBtn:hover {
+  background-image: linear-gradient(19deg, #f741b4 0%, #cb7dc8 100%);
+  transform: scale(1.1);
+}
+
+.cookbookBtn {
+  background-image: linear-gradient(340deg, #f5458a 0%, #ff6584 100%);
+}
+.cookbookBtn:hover {
+  transform: scale(1.1);
+  background-image: linear-gradient(340deg, #7f23f5 0%, #a970f2 100%);
+}
+
+.inactive-tab {
+  pointer-events: none;
+}
+
+.active {
+  color: #b721ff;
+}
+.purple-tab {
+  color: #b721ff;
+}
+
+.not-allowed {
+  cursor: not-allowed;
+}
+
+.randomBtn {
+  color: #fff;
+  font-size: 1.25rem;
+  margin: 0.5rem;
+  position: absolute;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.randomBtn:hover {
+  background-image: linear-gradient(0deg, #08aeea 0%, #2af598 100%);
+
+  transform: scale(1.1);
+}
+
+.footer-border {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.event-none {
+  pointer-events: none;
+}
+
+.expand {
+  transition: all 0.3s ease-in-out;
+}
+
+.expand:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
