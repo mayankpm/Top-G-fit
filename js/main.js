@@ -41,9 +41,7 @@ function generateUserSummary(event) {
   'My current weight is' + weight +
   'There are 3 goals: Maintain, Weight Loss, Weight Gain. The one I have chosen is' + userGoal + 'My activity level out of 5 is' +  activitylevel +
 
-  'Suggest a weekly planner for me'
-
-
+  'suggest a weekly planner for me from monday to friday, 4 exercises per day and the respective duration for each exercise in a list format, display them in separate lines because all appear on the same lines'
 
 //   const blob = new Blob([finalMessageJson], { type: "application/json" });
 
@@ -64,20 +62,68 @@ fetch("http://localhost:4000/", {
   .then((data) => {
     // Process the response from ChatGPT
     const chatGptResponse = data.result.text;
-    // Do something with the chatGptResponse
+
+
+
     console.log("ChatGPT Response:", chatGptResponse);
+
+     // Do something with the chatGptResponse
+    //  createTableFromData(chatGptResponse); // Call the function to create the table
+    // // Do something with the chatGptResponse
+    $("#chatGptResponse").text(chatGptResponse); // Update the text of the new div
   })
   .catch((error) => {
     console.error("Error:", error);
   });
 
-
-
-
-
-
-
-
+  // function createTableFromData(data) {
+  //   const tableContainer = document.getElementById("chatGptResponse");
+  
+  //   // Clear any previous table
+  //   tableContainer.innerHTML = "";
+  
+  //   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  //   const rows = 6; // 6 rows including the header row
+  //   const cols = 5;
+  //   const exercisesData = data;
+  
+  //   let tableHTML = "<table>";
+  
+  //   // Create the header row with the days of the week
+  //   tableHTML += "<tr>";
+  //   for (let i = 0; i < cols; i++) {
+  //     tableHTML += `<th>${days[i]}</th>`;
+  //   }
+  //   tableHTML += "</tr>";
+  
+  //   // Create the rest of the rows with exercises and durations
+  //   for (let i = 0; i < rows - 1; i++) {
+  //     tableHTML += "<tr>";
+  //     const day = days[i];
+  //     const dayData = exercisesData[day];
+  //     for (let j = 0; j < cols; j++) {
+  //       if (j === 0) {
+  //         tableHTML += `<td>${day}</td>`; // Day of the week
+  //       } else {
+  //         const exerciseIndex = "Exercise" + j; // Adjust the exercise index based on the new JSON format
+  //         const exercise = dayData[exerciseIndex];
+  //         if (exercise) {
+  //           tableHTML += `<td>${exercise}</td>`; // Exercise and duration in the same cell
+  //         } else {
+  //           tableHTML += "<td></td>"; // Empty cell
+  //         }
+  //       }
+  //     }
+  //     tableHTML += "</tr>";
+  //   }
+  
+  //   tableHTML += "</table>";
+  
+  //   tableContainer.innerHTML = tableHTML;
+  // }
+  
+  
+  
   // alert modal event listener
   $("#alert-ok-btn").on("click", function () {
     $("#alert-modal-container").addClass("form-none");
@@ -124,7 +170,7 @@ fetch("http://localhost:4000/", {
         console.log(data);
         // function that makes the users summary visible in a chart
         saveToLocal(data);
-        renderUserDataRefresh();
+        renderUserDataRefresh(chatGptResponse);
         removeForm();
       })
       .catch(function (error) {
@@ -160,6 +206,8 @@ function renderUserDataRefresh() {
     </div>
       `);
 
+      
+
   // create doughnut chart
   $("#userCard").append(userCard);
   const dataDoughnut = {
@@ -192,6 +240,8 @@ function renderUserDataRefresh() {
     document.getElementById("chartDoughnut"),
     configDoughnut
   );
+
+
   generateMeals();
 }
 

@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- tailwind css link -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Macro Meals </title>
+    <title>TopG-Fit </title>
     <!-- favicon image -->
-    <link rel="shortcut icon" type="image/jpg" href="./images/Group 6.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="./images\topg-fit-website-favicon-color.png"/>
 
   </head>
   <body>
@@ -25,7 +25,7 @@
     <nav class="border-b">
     <div class="mx-5 flex justify-center">
       <div class="relative flex items-center h-16">
-            <img class="lg:block h-8 w-auto" src="./images/Group 4.png" alt="Workflow">
+            <img class="lg:block h-8 w-auto" src="./images\topg1-transparent.png" alt="Workflow">
       </div>
     </div>
     </nav>
@@ -36,11 +36,11 @@
       <div class="max-w-xl w-full space-y-8 bg-purple-custom px-12 py-5 rounded-lg ">
         <!-- logo  -->
         <div>
-          <img class="animate-bounce mx-auto h-12 w-auto" src="./images/Group 6.png" alt="Workflow" />
-          <h2 class="mt-6 text-center text-4xl font-bold text-white">MACROMEALS</h2>
+          <img class="animate-bounce mx-auto h-12 w-auto" src="./images\topg1-transparent.png" alt="Workflow" />
+          <h2 class="mt-6 text-center text-4xl font-bold text-white">TopG-Fit</h2>
         </div>
         <!-- subheading -->
-        <p class="mt-2 text-center text-lg text-white">Insert your details for a custom meal plan.</p>
+        <p class="mt-2 text-center text-lg text-white">Insert your details.</p>
         <!-- user form -->
         <form class="mt-8 space-y-6" id="user-form" action="#" method="POST">
           <input type="hidden" name="remember" value="true" />
@@ -198,6 +198,11 @@
     <div id="userCard">
       <!-- append target calories here -->
       <!-- append user donut chart here -->
+
+      <!-- Add this new <div> element next to the pie chart container -->
+      <div id="chatGptResponse" class="text-gray-600 text-sm mt-4 bg-white p-3 rounded-md shadow-md" style="height: 300px; width: 100%; overflow-y: scroll;"></div>
+
+
     </div>
 
     <!-- COOK-BOOK  -->
@@ -283,12 +288,12 @@
                     
                     <h2 class="meal-type text-gray-900 text-l font-medium mb-2">Breakfast</h2>
                     <h5 id="day1-breakfast-recipe-name" class="recipe-name text-gray-900 text-xl font-medium mb-2">Recipe Name</h5>
-                     <!-- nutrition info -->
-                     <!-- calories -->
+                    <!-- nutrition info -->
+                    <!-- calories -->
                       <div class=" flex justify-center inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md mb-3 ">
                       Calories:  <span class="calories px-1" id="day1-break-fast-calories"> </span>
                       </div>
-                     <!-- protein -->
+                    <!-- protein -->
                       <div class="flex justify-around">
                         <div class="inline-block px-6 py-2.5 protein text-white font-medium text-xs leading-tight rounded-full shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out mb-2"><span id="day1-breakfast-protein"></span></div>
                       <!-- fat -->
@@ -317,10 +322,10 @@
                     <h5 id="day1-lunch-recipe-name" class="recipe-name text-gray-900 text-xl font-medium mb-2">Recipe Name</h5>
                     <!-- nutrition info -->
                     <!-- calories -->
-                     <div class=" flex justify-center inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md mb-3 ">
+                    <div class=" flex justify-center inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md mb-3 ">
                       Calories:  <span class="calories px-1" id="day1-lunch-calories"> </span>
-                     </div>
-                     <!-- protein -->
+                    </div>
+                    <!-- protein -->
                     <div class="flex justify-around">
                       <div class="inline-block px-6 py-2.5 protein text-white font-medium text-xs leading-tight rounded-full shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out mb-2"><span id="day1-lunch-protein"></span></div>
                       <!-- fat -->
@@ -349,10 +354,10 @@
                     <!-- nutrition info -->
                     
                     <!-- calories -->
-                     <div class=" flex justify-center inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md mb-3 ">
+                    <div class=" flex justify-center inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md mb-3 ">
                       Calories:  <span class="calories px-1" id="day1-dinner-calories"> </span>
-                     </div>
-                     <!-- protein -->
+                    </div>
+                    <!-- protein -->
                     <div class="flex justify-around">
                       <div class="inline-block px-6 py-2.5 protein text-white font-medium text-xs leading-tight rounded-full shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out mb-2"><span id="day1-dinner-protein"></span></div>
                       <!-- fat -->
@@ -366,7 +371,7 @@
                   </div>
                 </div>
               </div>
-               <!-- remaining calories -->
+              <!-- remaining calories -->
               <div class="flex justify-center items m-10">
                 <button item class="rounded-lg shadow-lg  p-4 font-semibold bg-darkpink-custom w-full event-none">
                   <div class="flex items-center justify-center">
@@ -410,7 +415,7 @@
       </a>
     </div>
     <div class="text-center font-semibold text-white py-5">
-    <span> &copy; Macro Meals</span>
+    <span> &copy; TopG-Fit</span>
   </div>
   </div>
 </footer>

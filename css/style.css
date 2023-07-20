@@ -144,3 +144,36 @@ footer {
   transform: scale(1.1);
   transition: all 0.3s ease-in-out;
 }
+/* New styles for .chatGptResponse */
+#chatGptResponse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 100%;
+  background-image: linear-gradient(340deg, #f5458a 0%, #ff6584 100%);
+  border-radius: 0.75rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add styles for the table */
+#chatGptResponse table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd; /* Border color for the table */
+}
+
+#chatGptResponse th,
+#chatGptResponse td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Border color for the table cells */
+}
+
+#chatGptResponse th {
+  background-color: #f2f2f2; /* Header background color */
+}

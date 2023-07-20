@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 const express = require("express");
 const app = express();
 
-const apiKey = "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";
+const apiKey = "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";
 const url = "https://api.openai.com/v1/completions";
 
 app.use(express.json()); // Parse incoming JSON data
@@ -19,8 +19,8 @@ async function getChatGptResponse(input) {
             body: JSON.stringify({
                 model: "text-davinci-003",
                 prompt: input,
-                temperature: 0.7, // Adjust the temperature for creativity (0.2 to 1.0)
-                max_tokens: 150, // Adjust the max tokens for the response length
+                temperature: 0.8, // Adjust the temperature for creativity (0.2 to 1.0)
+                max_tokens: 500, // Adjust the max tokens for the response length
             }),
         });
         const data = await response.json();
