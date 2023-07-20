@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 const express = require("express");
 const app = express();
 
-const apiKey = "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";
+const apiKey = "lol";
 const url = "https://api.openai.com/v1/completions";
 
 app.use(express.json()); // Parse incoming JSON data

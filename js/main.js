@@ -63,14 +63,75 @@ fetch("http://localhost:4000/", {
     // Process the response from ChatGPT
     const chatGptResponse = data.result.text;
 
+// Split the data into separate lines
+const lines = chatGptResponse.split("\n");
+
+// Initialize variables for each day's exercises and durations
+let monday = "", tuesday = "", wednesday = "", thursday = "", friday = "";
+
+// Initialize variables for each day's exercises and durations
+let currentDay = "";
+let currentExercises = "";
+
+// Loop through each line and assign the data to the corresponding variables
+lines.forEach((line, index) => {
+  if (line.startsWith("Monday:") || line.startsWith("Tuesday:") || line.startsWith("Wednesday:") || line.startsWith("Thursday:") || line.startsWith("Friday:") || index === lines.length - 1) {
+    if (currentDay) {
+      // If it's a new day or the end of the data, store the exercises for the previous day and reset the variables
+      switch (currentDay) {
+        case "Monday":
+          monday = currentExercises;
+          break;
+        case "Tuesday":
+          tuesday = currentExercises;
+          break;
+        case "Wednesday":
+          wednesday = currentExercises;
+          break;
+        case "Thursday":
+          thursday = currentExercises;
+          break;
+        case "Friday":
+          friday = currentExercises;
+          break;
+      }
+    }
+
+    // Reset the current day and exercises for the new day
+    currentDay = line.split(":")[0];
+    currentExercises = "";
+  } else {
+    // Append the current line (exercise) to the current day's exercises
+    currentExercises += `${line.trim()}<br>`;
+  }
+});
+
+// Build the formatted HTML
+const formattedHTML = `
+  <div id="chatGptResponse" class="text-gray-600 text-sm mt-4 bg-white p-3 rounded-md shadow-md" style="height: 500px; width: 100%; overflow-y: scroll;">
+    <strong>Monday:</strong><br>${monday}
+    <strong>Tuesday:</strong><br>${tuesday}
+    <strong>Wednesday:</strong><br>${wednesday}
+    <strong>Thursday:</strong><br>${thursday}
+    <strong>Friday:</strong><br>${friday}
+  </div>
+`;
+
+// Set the innerHTML of the chatGptResponse div
+$("#chatGptResponse").replaceWith(formattedHTML);
 
 
     console.log("ChatGPT Response:", chatGptResponse);
 
-     // Do something with the chatGptResponse
-    //  createTableFromData(chatGptResponse); // Call the function to create the table
+    console.log("Monday:", monday);
+console.log("Tuesday:", tuesday);
+console.log("Wednesday:", wednesday);
+console.log("Thursday:", thursday);
+console.log("Friday:", friday);
+
+
     // // Do something with the chatGptResponse
-    $("#chatGptResponse").text(chatGptResponse); // Update the text of the new div
+    // $("#chatGptResponse").text(chatGptResponse); // Update the text of the new div
   })
   .catch((error) => {
     console.error("Error:", error);
